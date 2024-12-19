@@ -9,7 +9,12 @@ export const wrapTextInTag = (
   return el.outerHTML;
 };
 
-export const generateId = () => {
-  const str = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
-  return str.split("").sort(() => 0.5 - Math.random()).join("").substring(0, 10);
+export const generateId = (): string => {
+  const chars =
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  let id = "";
+  for (let i = 0; i < 10; i++) {
+    id += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return id;
 };
