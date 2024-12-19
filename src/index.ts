@@ -10,9 +10,6 @@ export const wrapTextInTag = (
 };
 
 export const generateId = () => {
-  return "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-    .split("")
-    .sort(() => 0.5 - Math.random())
-    .join("")
-    .substring(0, 10);
+  const str = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+  return str.split("").sort(() => 0.5 - Math.random()).join("").substring(0, 10);
 };
